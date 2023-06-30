@@ -1,8 +1,9 @@
 function Home() {
   return (
     <div>
-      <h1>Bine ai venit pe portofoliul meu</h1>
-      <p>Momentan site-ul este in lucru.</p>
+      <h1>Bună, sunt Bîlă Alexandru.</h1>
+      <h2>Un programator curios axat pe java si javascript.</h2>
+      <p>În continuă aspirație spre mai bine.</p>
     </div>
   );
 }
