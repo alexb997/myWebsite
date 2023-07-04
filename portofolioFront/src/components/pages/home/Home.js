@@ -2,6 +2,7 @@ import Header from "./Header";
 import Experience from "./Experience";
 import { Container } from "react-bootstrap";
 import "./home.css";
+import Contact from "../contact/Contact";
 
 function Home() {
   return (
@@ -14,10 +15,20 @@ function Home() {
         <section className="experience">
           <h2>Experience</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            scelerisque justo nisl, id pellentesque arcu vestibulum vitae.
-            Aliquam at elit auctor, rhoncus urna vel, eleifend justo.
+            Some short description of experience, small description of each
+            project with link to project page Ambitions/ Plans for future after
           </p>
+        </section>
+      </>
+      <>
+        <section id="About" className="about">
+          <h2>About</h2>
+          <p>About zone still unsure of content</p>
+        </section>
+      </>
+      <>
+        <section id="Contact" className="contact">
+          <Contact />
         </section>
       </>
     </Container>
