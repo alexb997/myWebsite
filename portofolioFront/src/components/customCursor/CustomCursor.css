@@ -1,0 +1,21 @@
+.cursor-effect {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-out;
+}
+
+.cursor-effect:hover .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+}
