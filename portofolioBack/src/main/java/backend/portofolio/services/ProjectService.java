@@ -21,7 +21,7 @@ public class ProjectService
         return projects;
     }
 
-    public Project getProjectsById(int id)
+    public Project getProjectsById(long id)
     {
         return projectRepository.findById(id).get();
     }
@@ -31,7 +31,7 @@ public class ProjectService
         projectRepository.save(projects);
     }
 
-    public void delete(int projectid)
+    public void delete(long projectid)
     {
         projectRepository.deleteById(projectid);
     }
