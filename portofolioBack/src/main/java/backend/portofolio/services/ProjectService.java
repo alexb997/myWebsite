@@ -12,7 +12,7 @@ import java.util.List;
 public class ProjectService
 {
     @Autowired
-    ProjectRepository projectRepository;
+    private ProjectRepository projectRepository;
 
     public List<Project> getAllProjects()
     {

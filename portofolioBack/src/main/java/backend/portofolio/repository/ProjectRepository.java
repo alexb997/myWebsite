@@ -1,9 +1,8 @@
 package backend.portofolio.repository;
 
 import backend.portofolio.models.Project;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.io.Serializable;
 
-@Repository
-public interface ProjectRepository extends CrudRepository<Project, Long> {
+public interface ProjectRepository extends JpaRepository<Project, Serializable> {
 }
