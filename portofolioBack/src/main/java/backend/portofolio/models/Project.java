@@ -1,9 +1,14 @@
 package backend.portofolio.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-@Data
+@Getter
+@Setter
+@Accessors(chain=true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "PROJECTS")
 public class Project {
@@ -12,6 +17,8 @@ public class Project {
     private Integer projectId;
     private String projectName;
     private String projectDescription;
+    private String projectImgUrl;
+    private String status;
 
     @Override
     public String toString() {
@@ -19,6 +26,8 @@ public class Project {
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
                 ", projectDescription='" + projectDescription + '\'' +
+                ", projectImgUrl='" + projectImgUrl + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
