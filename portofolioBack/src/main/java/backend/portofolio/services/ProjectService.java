@@ -2,33 +2,32 @@ package backend.portofolio.services;
 
 import backend.portofolio.models.Project;
 import backend.portofolio.repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
+
+@RequiredArgsConstructor
 public class ProjectService
 {
-    @Autowired
     private ProjectRepository projectRepository;
 
     public List<Project> getAllProjects()
     {
-        List<Project> projects = new ArrayList<Project>();
-        projectRepository.findAll().forEach(projects1 -> projects.add(projects1));
-        return projects;
+        return projectRepository.findAll();
     }
 
-    public Project getProjectsById(long id)
+    public Optional<Project> getProjectsById(long id)
     {
-        return projectRepository.findById(id).get();
+        return projectRepository.findById(id);
     }
 
-    public void saveOrUpdate(Project projects)
+    public Project create(Project project)
     {
-        projectRepository.save(projects);
+        return projectRepository.save(project);
     }
 
     public void delete(long projectid)
@@ -36,8 +35,4 @@ public class ProjectService
         projectRepository.deleteById(projectid);
     }
 
-    public void update(Project projects, int projectid)
-    {
-        projectRepository.save(projects);
-    }
 }

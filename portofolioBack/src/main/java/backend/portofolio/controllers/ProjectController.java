@@ -2,47 +2,60 @@ package backend.portofolio.controllers;
 
 import backend.portofolio.models.Project;
 import backend.portofolio.services.ProjectService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequestMapping("/project/")
+@Slf4j
+@RequiredArgsConstructor
 public class ProjectController
 {
-    @Autowired
     ProjectService projectsService;
 
-    @GetMapping("/project")
-    private List<Project> getAllProjects()
+    @GetMapping("/all")
+    public ResponseEntity<List<Project>> getAllProjects()
     {
-        return projectsService.getAllProjects();
+        return ResponseEntity.ok(projectsService.getAllProjects());
     }
 
-    @GetMapping("/project/{projectid}")
-    private Project getProjects(@PathVariable("projectid") int projectid)
+    @GetMapping("/{projectid}")
+    public ResponseEntity<Project>  getProjects(@PathVariable("projectid") int projectid)
     {
-        return projectsService.getProjectsById(projectid);
+        Optional<Project> project = projectsService.getProjectsById(projectid);
+        if (!project.isPresent()) {
+            log.error("Id " + projectid + " is not existed");
+            ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(project.get());
     }
 
-    @DeleteMapping("/projects/{id}")
-    private void deleteBook(@PathVariable("id") int id)
+    @DeleteMapping("/{id}")
+    public void deleteProject(@PathVariable("id") int id)
     {
         projectsService.delete(id);
     }
 
-    @PostMapping("/projects")
-    private long saveBook(@RequestBody Project projects)
+    @PostMapping("/post")
+    public ResponseEntity  saveProject( @RequestBody Project project)
     {
-        projectsService.saveOrUpdate(projects);
-        return projects.getProjectId();
+        return ResponseEntity.ok(projectsService.create(project));
     }
 
-    @PutMapping("/projects")
-    private Project update(@RequestBody Project projects)
-    {
-        projectsService.saveOrUpdate(projects);
-        return projects;
+    @PutMapping("/{id}")
+    public ResponseEntity<Project> updateProject(@PathVariable Long id, @RequestBody Project project) {
+        if (!projectsService.getProjectsById(id).isPresent()) {
+            log.error("Id " + id + " is not existed");
+            ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(projectsService.create(project));
     }
 }
