@@ -1,8 +1,7 @@
-import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../projects/ProjectCard";
 import { Container, Row, Col } from "react-bootstrap";
 
-function Projects() {
+function ProjectsList() {
   const [projectsList, setProjectsList] = useState([]);
   useEffect(() => {
     const fetchProjects = () => {
@@ -15,11 +14,9 @@ function Projects() {
     };
     fetchProjects();
   });
-
   return (
     <Container>
-      <h1>My Projects</h1>
-      <h2>Here is a list of my projects </h2>
+      <h1>Projects</h1>
       <Col>
         {projectsList.length !== 0 ? (
           projectsList.map((c, index) => (
@@ -36,4 +33,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default ProjectsList;
