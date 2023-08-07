@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Container, Row, Col } from "react-bootstrap";
 

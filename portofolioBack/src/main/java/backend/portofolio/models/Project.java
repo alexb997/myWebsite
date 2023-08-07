@@ -1,41 +1,48 @@
 package backend.portofolio.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
-import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.util.Date;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "PROJECTS")
-@Data
+@Table(name = "projects")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long projectId;
-    private String projectName;
-    private String projectDescription;
-    private String projectImgUrl;
-    private String status;
-    @CreationTimestamp
-    private Date createdAt;
 
-    @UpdateTimestamp
-    private Date updatedAt;
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "imgURL")
+    private String imgUrl;
+
+    @Column(name = "status")
+    private String status;
+
+    public Project(String name, String description, String imgUrl, String status) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.imgUrl = imgUrl;
+        this.status = status;
+    }
 
     @Override
     public String toString() {
         return "Project{" +
                 "projectId=" + projectId +
-                ", projectName='" + projectName + '\'' +
-                ", projectDescription='" + projectDescription + '\'' +
-                ", projectImgUrl='" + projectImgUrl + '\'' +
+                ", projectName='" + name + '\'' +
+                ", projectDescription='" + description + '\'' +
+                ", projectImgUrl='" + imgUrl + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }

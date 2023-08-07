@@ -1,6 +1,4 @@
-74
-7\4
-1package backend.portofolio.services;
+package backend.portofolio.services;
 
 import backend.portofolio.models.Project;
 import backend.portofolio.repository.ProjectRepository;
@@ -11,10 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
 @RequiredArgsConstructor
-public class ProjectService
-{
+public class ProjectService {
     private ProjectRepository projectRepository;
 
     public List<Project> getAllProjects()
