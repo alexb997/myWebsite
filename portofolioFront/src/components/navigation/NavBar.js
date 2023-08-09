@@ -15,6 +15,7 @@ function NavBar() {
             <NavDropdown title="Projects" id="basic-nav-dropdown">
               <NavDropdown.Item href="/projects">Project1</NavDropdown.Item>
               <NavDropdown.Item href="/projects">Project2</NavDropdown.Item>
+              <NavDropdown.Item href="/projects">Project3</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

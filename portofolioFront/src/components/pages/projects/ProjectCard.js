@@ -18,9 +18,9 @@ function ProjectCard(props) {
         />
         <Card.ImgOverlay>
           <Card.Title>{props.project.title}</Card.Title>
-          <Card.Subtitle>Status (finished or in work)</Card.Subtitle>
+          <Card.Subtitle>{props.project.status}</Card.Subtitle>
           <Card.Text>{props.project.description}</Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
+          <Card.Text>{props.project.updated}</Card.Text>
         </Card.ImgOverlay>
       </Card>
     </>
