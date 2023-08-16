@@ -1,10 +1,8 @@
-import Header from "./Header";
-import Experience from "./Experience";
 import { Container } from "react-bootstrap";
-import "./home.css";
 import ProjectsList from "./ProjectsList";
+import ProjectForm from "./ProjectForm";
 
-function Home() {
+function Admin() {
   return (
     <Container>
       <h1>Zonă introducere noi proiecte.</h1>
@@ -15,4 +13,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Admin;

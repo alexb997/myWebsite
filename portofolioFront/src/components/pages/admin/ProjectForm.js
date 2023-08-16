@@ -17,7 +17,7 @@ function ProjectForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('/api/projects', formData)
+    axios.post('/project/post', formData)
       .then((response) => {
         console.log('Project created successfully:', response.data);
       })

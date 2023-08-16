@@ -2,25 +2,27 @@ package backend.portofolio.services;
 
 import backend.portofolio.models.Project;
 import backend.portofolio.repository.ProjectRepository;
-import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class ProjectService {
+
+    @Autowired
     private ProjectRepository projectRepository;
 
-    public List<Project> getAllProjects()
+    public List<Project> getAll()
     {
         return projectRepository.findAll();
     }
 
-    public Optional<Project> getProjectsById(long id)
+    public Project getById(Integer id)
     {
-        return projectRepository.findById(id);
+        return projectRepository.findById(id).orElse(null);
     }
 
     public Project create(Project project)
@@ -28,9 +30,20 @@ public class ProjectService {
         return projectRepository.save(project);
     }
 
-    public void delete(long projectid)
+    public Project update(Project project)
     {
-        projectRepository.deleteById(projectid);
+        Project oldProject = projectRepository.findById(project.getId()).orElse(null);
+        oldProject.setDescription(project.getDescription());
+        oldProject.setName(project.getName());
+        oldProject.setImgUrl(project.getImgUrl());
+        oldProject.setStatus(project.getStatus());
+        return projectRepository.save(oldProject);
+    }
+
+    public Integer delete(Integer id)
+    {
+        projectRepository.deleteById(id);
+        return id;
     }
 
 }

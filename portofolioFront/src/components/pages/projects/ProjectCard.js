@@ -7,7 +7,6 @@ function ProjectCard(props) {
   return (
     <>
       <Card
-        onClick={() => navigate(`/project/` + props.project.id)}
         className="bg-dark text-white test overflow-hidden"
         title="clicking on it will redirect to detailed project page"
       >

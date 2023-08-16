@@ -6,8 +6,11 @@ function Projects() {
   const [projectsList, setProjectsList] = useState([]);
   useEffect(() => {
     const fetchProjects = () => {
-      return fetch("http://localhost:8080/projects/")
-        .then((response) => response.json())
+      return fetch("http://localhost:8080/project/")
+        .then((response) => {
+          console.log(response.json());
+          response.json();
+        })
         .then((data) => {
           setProjectsList(data.items);
         })
