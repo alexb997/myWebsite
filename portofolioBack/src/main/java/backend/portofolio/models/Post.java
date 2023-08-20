@@ -9,12 +9,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+public class Post {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
-    private String description;
-    private String imgUrl;
-    private String status;
+    private String username;
+    private String content;
+    private String type;
 }

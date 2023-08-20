@@ -4,9 +4,20 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function ProjectsList() {
   const [projectsList, setProjectsList] = useState([]);
+
+  let headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  headers.append("Accept", "application/json");
+  headers.append("Authorization", "Basic ");
+  headers.append("Origin", "http://localhost:3000");
   useEffect(() => {
     const fetchProjects = () => {
-      return fetch("http://localhost:8080/projects/")
+      return fetch("http://localhost:8080/projects/", {
+        mode: "cors",
+        credentials: "include",
+        method: "POST",
+        headers: headers,
+      })
         .then((response) => response.json())
         .then((data) => {
           setProjectsList(data.items);
