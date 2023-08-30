@@ -13,8 +13,6 @@ public class Comment {
     @Id
     @GeneratedValue
     private int id;
-    @ManyToOne
-    @JoinColumn(name="id", nullable=false)
     private int refferenceID;
     private String username;
     private String content;

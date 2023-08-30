@@ -12,7 +12,7 @@ function ProjectsList() {
   headers.append("Origin", "http://localhost:3000");
   useEffect(() => {
     const fetchProjects = () => {
-      return fetch("http://localhost:8080/projects/", {
+      return fetch("http://localhost:8080/project/", {
         mode: "cors",
         credentials: "include",
         method: "POST",
