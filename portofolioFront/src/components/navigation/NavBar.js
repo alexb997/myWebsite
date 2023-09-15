@@ -5,7 +5,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      className="navbar navbar-expand-lg navbar-dark shadow-5-strong fixed-top"
+    >
       <Container>
         <Navbar.Brand href="/">Alex Portofolio</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

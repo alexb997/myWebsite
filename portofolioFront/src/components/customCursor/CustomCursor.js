@@ -25,8 +25,6 @@ function CustomCursor() {
         style={{ left: position.x, top: position.y }}
       ></div>
 
-      <NavBar />
-      <AppRouter />
     </div>
   );
 }

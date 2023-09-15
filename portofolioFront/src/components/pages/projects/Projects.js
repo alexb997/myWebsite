@@ -11,9 +11,13 @@ function Projects() {
           console.log(response.json());
         })
         .then((data) => {
-          setProjectsList(data.items);
+          console.log(data);
+          // setProjectsList(data.items);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          console.log("erroare");
+        });
     };
     fetchProjects();
   });

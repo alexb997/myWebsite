@@ -6,7 +6,22 @@ import AppRouter from "./components/routing/AppRouter";
 function App() {
   return (
     <div className="App">
-      <CustomCursor />
+      <div class="area">
+        <NavBar />
+        <AppRouter />
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
   );
 }
