@@ -1,4 +1,14 @@
-.cursor-effect {
+.follower {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+
+/* .cursor-effect {
   width: 100vw;
   overflow: hidden;
   position: relative;
@@ -17,4 +27,4 @@
 
 .cursor-effect:hover .cursor {
   transform: translate(-50%, -50%) scale(1.5);
-}
+} */

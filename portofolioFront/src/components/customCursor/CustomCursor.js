@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CustomCursor.css";
 import NavBar from "../navigation/NavBar";
 import AppRouter from "../routing/AppRouter";
+import { Col } from "react-bootstrap";
 
 function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -19,12 +20,32 @@ function CustomCursor() {
   }, []);
 
   return (
-    <div className="cursor-effect">
-      <div
-        className="cursor"
-        style={{ left: position.x, top: position.y }}
-      ></div>
-
+    <div className="follower-effect">
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="follower"></div>
+      <div className="area">
+        <Col>
+          <NavBar />
+          <AppRouter />
+          <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </Col>
+      </div>
     </div>
   );
 }
