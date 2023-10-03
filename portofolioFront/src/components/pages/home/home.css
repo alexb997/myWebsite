@@ -7,6 +7,15 @@
   font-family: Arial, sans-serif;
 }
 
+.info-box {
+  color: silver;
+}
+
+.info-box:hover {
+  border: 2px solid red;
+  box-shadow: 2pt red;
+}
+
 .header h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -36,4 +45,11 @@
 
 section {
   height: 45vh;
+}
+
+.sendMailButton {
+  z-index: 1;
+  position: relative;
+  opacity: 0.5;
+  width: 20%;
 }

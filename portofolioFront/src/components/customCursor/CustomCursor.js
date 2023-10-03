@@ -21,17 +21,8 @@ function CustomCursor() {
 
   return (
     <div className="follower-effect">
-      <div className="follower"></div>
-      <div className="follower"></div>
-      <div className="follower"></div>
-      <div className="follower"></div>
-      <div className="follower"></div>
-      <div className="follower"></div>
-      <div className="follower"></div>
       <div className="area">
         <Col>
-          <NavBar />
-          <AppRouter />
           <ul className="circles">
             <li></li>
             <li></li>
@@ -44,6 +35,8 @@ function CustomCursor() {
             <li></li>
             <li></li>
           </ul>
+          <NavBar />
+          <AppRouter />
         </Col>
       </div>
     </div>

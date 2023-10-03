@@ -1,12 +1,16 @@
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 function Header() {
   return (
-    <section className="header d-flex align-items-center justify-content-center">
-      <Container fluid>
-        <h1>Bună, sunt Bîlă Alexandru.</h1>
-        <h2>Un programator curios axat pe java si javascript.</h2>
-        <p>În continuă aspirație spre mai bine.</p>
+    <section className="d-flex align-items-center">
+      <Container className="header ">
+        <Row className="justify-content-center">
+          <Col className="info-box">
+            <h1>Bună, sunt Eu</h1>
+            <h2>Un programator curios axat pe java si javascript.</h2>
+            <p>În continuă aspirație spre mai bine.</p>
+          </Col>
+        </Row>
       </Container>
     </section>
   );
