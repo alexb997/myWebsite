@@ -15,6 +15,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/alexandru-b%C3%AEl%C4%83-2b91a3198/"
+              className="link"
             >
               <svg
                 version="1.1"
@@ -33,6 +34,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
               href="https://github.com/alexb997"
+              className="link"
             >
               <svg
                 version="1.1"
@@ -50,6 +52,7 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
               href="https://www.facebook.com/alexandru.bila.90/"
+              className="link"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
